@@ -1,0 +1,31 @@
+// Tower of Hanoi to Move Source to Destination Disc
+
+import java.util.Scanner; 
+
+public class towerOfHanoi
+{
+     public static void main(String []args)
+     {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter No. of Disk to move Source to  Destination : ");
+        int n=sc.nextInt();
+        move(n, "S", "A", "D");
+     }
+     
+     public static void move(int n, String S, String A, String D)
+     {
+         if(n==1)
+         {
+             System.out.println("Move "+S+" to "+D);
+         }
+         
+         else 
+         {
+             move(n-1, S, D, A);
+             
+             System.out.println("Move "+S+" to "+D);
+             
+             move(n-1, A, S, D);
+         }
+     }
+}
