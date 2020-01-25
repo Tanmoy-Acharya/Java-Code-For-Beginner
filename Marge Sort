@@ -1,0 +1,94 @@
+/* MARGE SORT USING DIVIDE AND CONQUER CONCEPT */
+public class margeSort
+{
+    int b_Array[];
+    int tempArray[];
+    int length;
+     public static void main(String []args)
+     {
+        int[] array={3, 2, 4, 5, 6, 7, 9, 1, 33, 2, 2, 11, 3, 4, 3, 2};
+        margeSort ms=new margeSort();
+        
+        System.out.println("INPUT ARRAY");
+        for(int n=0;n<array.length;n++)
+        {
+            System.out.print(array[n]+"  ");
+        }
+        
+        ms.margedSort(array);
+        
+        System.out.println("\n:::SORTED ARRAY:::");
+        
+        for(int x=0;x<array.length;x++)
+        {
+            System.out.print(array[x]+"  ");
+        }
+        
+     }
+     
+     private void margedSort(int[] array)
+     {
+         this.b_Array=array;
+         this.length=array.length;
+         this.tempArray=new int[length];
+         
+         margeS(0, length-1);
+     }
+     
+     private void margeS(int low, int high)
+     {
+         if(low<high)
+         {
+             int mid=(high+low)/2;
+             margeS(low, mid);
+             margeS(mid+1, high);
+             
+             marge(low, mid, high);
+         }
+     }
+     
+     private void marge(int low, int mid, int high)
+     {
+         for(int x=low;x<=high;x++)
+         {
+             tempArray[x]=b_Array[x];
+         }
+         
+         int i=low;
+         int j=mid+1;
+         int k=low;
+         while(i<=mid && j<=high)
+         {
+             if(tempArray[i]<=tempArray[j])
+             {
+                b_Array[k]=tempArray[i];
+                i++;
+             }
+             else 
+             {
+                b_Array[k]=tempArray[j];
+                j++;
+            }
+            k++;
+         }
+         
+         if(i>mid)
+         {
+             while(j<=high)
+             {
+                 b_Array[k]=tempArray[j];
+                 j++;
+                 k++;
+             }
+         }
+         else 
+         {
+              while(i<=mid)
+             {
+                 b_Array[k]=tempArray[i];
+                 i++;
+                 k++;
+             }
+         }
+     }
+}
