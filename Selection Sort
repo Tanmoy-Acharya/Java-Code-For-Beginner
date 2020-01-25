@@ -1,0 +1,90 @@
+//SELECTION SORT USING METHOD WITHOUT CREATING OBJECT
+/*
+public class SelectionSortUsingMethod 
+ {
+     static int b_Array[];
+     static int len;
+    
+      public static void main(String []args)
+      {
+          int[] array={1, 4, 5, 36, 4, 7, 4, 4, 5, 4, 2, 1, 6, 10};
+         
+          System.out.println("INPUT");
+          for(int i=0;i<array.length;i++)
+          {
+              System.out.print(array[i]+"  ");
+          }
+         
+          selectionSort(array);
+          System.out.println("\nSORTED ARRAY");
+          for(int i=0;i<array.length;i++)
+          {
+              System.out.print(array[i]+"  ");
+          }
+      }
+     
+      private static void selectionSort(int[] array)
+      {
+          b_Array=array;
+          len=array.length;
+         
+          for(int i=0;i<len-1;i++)
+          {
+              int minIndex=i;
+              for(int j=i+1;j<len;j++)
+              {
+                  if(b_Array[minIndex]>b_Array[j])
+                  {
+                      minIndex=j;     //FInd min Index form i+1 upto last index;
+                  }
+              }
+             
+              int temp=b_Array[i];   // Swap value i index with minIndex;    
+              b_Array[i]=b_Array[minIndex];
+              b_Array[minIndex]=temp;
+          }         
+      }
+ }
+/*
+
+
+// SELECTION SORT OF AN ARRAY
+
+public class SelectionSort 
+{
+     public static void main(String []args)
+     {
+         int[] array={1, 4, 5, 36, 4, 7, 4, 4, 5, 4, 2, 1, 6, 10};
+         
+         System.out.println("INPUT");
+         for(int i=0;i<array.length;i++)
+         {
+             System.out.print(array[i]+"  ");
+         }
+         
+
+         int len=array.length;
+         
+         for(int i=0;i<len-1;i++)
+         {
+             int minIndex=i;
+             for(int j=i+1;j<len;j++)
+             {
+                 if(array[minIndex]>array[j])
+                 {
+                     minIndex=j;     //FInd min Index form i+1 upto last index;
+                 }
+             }
+             
+             int temp=array[i];   // Swap value i index with minIndex;    
+             array[i]=array[minIndex];
+             array[minIndex]=temp;
+         }
+         
+         System.out.println("\nSORTED ARRAY");
+         for(int i=0;i<array.length;i++)
+         {
+             System.out.print(array[i]+"  ");
+         }      
+     }
+}
