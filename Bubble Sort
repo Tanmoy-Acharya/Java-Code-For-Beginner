@@ -1,0 +1,36 @@
+/* BUBBLE SORT  */
+public class bubbleSort
+{
+     public static void main(String []args)
+     {
+        int[] array={ 1, 5, 200, 6, 3, 47, 5, 333, 75, 32};
+        
+        System.out.println("INPUT ARRAY");
+        
+        for(int i=0;i<array.length;i++)
+        {
+            System.out.print(array[i]+"  ");
+        }
+        
+        
+        for(int i=0;i<array.length-1;i++)
+        {
+            for(int j=0;j<array.length-i-1;j++)
+            {
+                if(array[j]>array[j+1])
+                {
+                    int temp=array[j+1];
+                    array[j+1]=array[j];
+                    array[j]=temp;
+                }
+            }
+        }
+        
+        System.out.println("\nSORTED ARRAY");
+        
+        for(int i=0;i<array.length;i++)
+        {
+            System.out.print(array[i]+"  ");
+        }
+     }
+}
